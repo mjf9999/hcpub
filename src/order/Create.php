@@ -13,7 +13,6 @@ class Create extends Base
      * @var string 接口地址
      */
     protected $api = '/bmc/view/web/order/syncOrder';
-    // protected $api = '/bmc/view/web/order/sync';
     /**
      * @var array $options 请求参数
      */

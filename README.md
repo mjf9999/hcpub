@@ -1,5 +1,16 @@
 ## 对接虎彩的订单接口
-例子
+## 安装
+```bash
+composer require morton/hcpub
+```
+
+* 本地开发测试
+```bash
+# 安装
+composer install
+# 执行例子
+php sample.php
+```
 ```php
 $config = [
     // 请求网关  http://api.hcpub.cn

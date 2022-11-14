@@ -14,9 +14,9 @@ class FileInfos extends Base
      */
     protected $api = '/bmc/view/web/order/upladeFileInfos';
     /**
-     * @var array $options 请求参数
+     * @var array $body 请求参数
      */
-    protected $options = [
+    protected $body = [
         "operationType" => 1,
         "reason" => "测试修改",
         "contact" => "张三",

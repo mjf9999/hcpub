@@ -12,6 +12,8 @@ composer install
 php sample.php
 ```
 ```php
+<?php
+use Morton\Hcpub\Factory;
 $config = [
     // 请求网关  http://api.hcpub.cn
     'gateway' => 'http://120.86.125.166:6060',
@@ -25,11 +27,11 @@ $config = [
 Factory::setConfig(config('hcpub'));
 // 下单接口
 $app = Factory::app('order\\Create');
-$app->setOptions([])->send();
+$app->setBody([])->send();
 // 修改订单地址
 $app = Factory::app('update\\Address');
-$app->setOptions([])->send();
+$app->setBody([])->send();
 // 修改订单文件
 $app = Factory::app('update\\FileInfos');
-$app->setOptions([])->send();
+$app->setBody([])->send();
 ```

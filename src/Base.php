@@ -17,9 +17,9 @@ class Base
     protected $api;
 
     /**
-     * @var array $options 请求参数
+     * @var array $body 请求参数
      */
-    protected $options;
+    protected $body;
 
     public function __construct()
     {
@@ -27,7 +27,7 @@ class Base
 
     public function send()
     {
-        $data = $this->options;
+        $data = $this->body;
         $this->validate();
         $appSecret = $this->config['appSecret'];
         $method =  $this->config['method'];
@@ -57,9 +57,9 @@ class Base
         $this->config = $config;
         return $this;
     }
-    public function setOptions($value)
+    public function setBody($value)
     {
-        $this->options = $value;
+        $this->body = $value;
         return $this;
     }
 

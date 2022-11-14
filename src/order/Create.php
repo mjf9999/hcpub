@@ -14,9 +14,9 @@ class Create extends Base
      */
     protected $api = '/bmc/view/web/order/syncOrder';
     /**
-     * @var array $options 请求参数
+     * @var array $body 请求参数
      */
-    protected $options = [
+    protected $body = [
         "bookInfoList" => [
             [
                 "bookName" => "书名",

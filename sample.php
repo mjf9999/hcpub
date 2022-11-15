@@ -13,7 +13,7 @@ $config = [
     // 加密方式
     'method' => 'DES-CBC'
 ];
-Factory::setConfig(config('hcpub'));
+Factory::setConfig($config);
 // 下单接口
 $app = Factory::app('order\\Create');
 $app->setBody([])->send();

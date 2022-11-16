@@ -27,12 +27,12 @@ class Create extends Base
                     [
                         "partType" => "C",
                         "fileName" => "tangshuibook-11110-cover.pdf",
-                        "fileUrl" => "https=>//bookssl.tangshui.net/tangshuibook-11110-cover.pdf"
+                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221114/3ec63ce8b98a3f21781933ee1b4a0420.docx"
                     ],
                     [
                         "partType" => "P",
                         "fileName" => "tangshuibook-11110-inner.pdf",
-                        "fileUrl" => "https=>//bookssl.tangshui.net/tangshuibook-11110-inner.pdf"
+                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221114/3ec63ce8b98a3f21781933ee1b4a0420.docx"
                     ]
                 ]
             ]

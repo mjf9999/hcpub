@@ -3,7 +3,8 @@
 namespace Morton\Hcpub;
 
 use Morton\Hcpub\tools\DES;
-
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 class Base
 {
     /**
@@ -43,14 +44,15 @@ class Base
             'json' => $body,
             'timeout' => 10
         ];
-
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', $gateway, $params);
-        $statusCode = $response->getStatusCode();
-        if (200 != $statusCode) {
+        try {
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('POST', $gateway, $params);
+            return $response->getBody()->getContents(); // '{"id": 1420053, "name": "guzzle", ...}'
+        } catch (ClientException $e) {
+            return $e->getResponse()->getBody()->getContents();
+        } catch (RequestException $e) {
+            return $e->getResponse()->getBody()->getContents();
         }
-        return $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
-
     }
     public function setConfig($config)
     {

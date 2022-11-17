@@ -5,6 +5,7 @@ namespace Morton\Hcpub;
 use Morton\Hcpub\tools\DES;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
+
 class Base
 {
     /**
@@ -35,7 +36,8 @@ class Base
         $gateway = $this->config['gateway'] . $this->api;
         $key = substr($appSecret, 0, 8);
         $des = new DES($key, $method, DES::OUTPUT_BASE64, $key);
-        $encrypt = $des->encrypt(json_encode($data));
+        $data = is_string($data) ? $data : json_encode($data, JSON_UNESCAPED_SLASHES);
+        $encrypt = $des->encrypt($data);
         $body = [
             'appId' => $this->config['appId'],
             'encryptedParam' => $encrypt,

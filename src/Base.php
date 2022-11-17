@@ -5,6 +5,8 @@ namespace Morton\Hcpub;
 use Morton\Hcpub\tools\DES;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Client;
 
 class Base
 {
@@ -42,13 +44,9 @@ class Base
             'appId' => $this->config['appId'],
             'encryptedParam' => $encrypt,
         ];
-        $params = [
-            'json' => $body,
-            'timeout' => 10
-        ];
         try {
-            $client = new \GuzzleHttp\Client();
-            $response = $client->request('POST', $gateway, $params);
+            $request = new Request('POST', $gateway, ['content-type' => 'application/json'], json_encode($body, JSON_UNESCAPED_SLASHES));
+            $response = (new Client())->send($request);
             return $response->getBody()->getContents(); // '{"id": 1420053, "name": "guzzle", ...}'
         } catch (ClientException $e) {
             return $e->getResponse()->getBody()->getContents();

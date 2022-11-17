@@ -3,10 +3,8 @@
 namespace Morton\Hcpub;
 
 use Morton\Hcpub\tools\DES;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Client;
+use Morton\Hcpub\tools\Http;
+use Exception;
 
 class Base
 {
@@ -45,13 +43,15 @@ class Base
             'encryptedParam' => $encrypt,
         ];
         try {
-            $request = new Request('POST', $gateway, ['content-type' => 'application/json'], json_encode($body, JSON_UNESCAPED_SLASHES));
-            $response = (new Client())->send($request);
-            return $response->getBody()->getContents(); // '{"id": 1420053, "name": "guzzle", ...}'
-        } catch (ClientException $e) {
-            return $e->getResponse()->getBody()->getContents();
-        } catch (RequestException $e) {
-            return $e->getResponse()->getBody()->getContents();
+            $headers = ['Content-type: application/json'];
+            $options = [
+                CURLOPT_HTTPHEADER => $headers,
+                CURLOPT_TIMEOUT => 60,
+            ];
+            $response = Http::post($gateway, json_encode($body, JSON_UNESCAPED_SLASHES), $options);
+            return $response;
+        } catch (Exception $e) {
+            return json_encode(['code' => -1, 'message' => $e->getMessage(), 'result' => null]);
         }
     }
     public function setConfig($config)

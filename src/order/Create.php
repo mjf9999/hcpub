@@ -27,27 +27,27 @@ class Create extends Base
                     [
                         "partType" => "C",
                         "fileName" => "tangshuibook-11110-cover.pdf",
-                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221114/3ec63ce8b98a3f21781933ee1b4a0420.docx"
+                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221116/5badd0fa04cca88f098aa003ad4ce177.pdf"
                     ],
                     [
                         "partType" => "P",
                         "fileName" => "tangshuibook-11110-inner.pdf",
-                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221114/3ec63ce8b98a3f21781933ee1b4a0420.docx"
+                        "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221117/643791013547b4209fb7bc33207bdf8b.pdf"
                     ]
                 ]
             ]
         ],
         "receiveInfos" => [
-            "detailedAddress" => "fffff",
-            "contactMan" => "ffaaaa",
+            "detailedAddress" => "测试地址520号",
+            "contactMan" => "默默",
             "contactMobile" => "18877772222",
             "province" => "北京市",
             "city" => "广州",
             "county" => "东城区",
             "streetAddress" => ""
         ],
-        "callBackUrl" => "https=>//testapi.justcome.cn/prints/callback/hucai",
-        "outOrderNo" => "6180aace9e3aa80028af3ae0"
+        "callBackUrl" => "https://mall.bbys.cn/api/index/callback",
+        "outOrderNo" => "12345677894"
     ];
 
     protected function validate()

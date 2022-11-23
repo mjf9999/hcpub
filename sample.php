@@ -16,10 +16,10 @@ $config = [
 Factory::setConfig($config);
 // 下单接口
 $app = Factory::app('order\\Create');
-echo '下单接口:'.$app->setBody((object)[])->send().PHP_EOL;
+echo '下单接口:'.$app->send().PHP_EOL;
 // 修改订单地址
-$app = Factory::app('update\\Address');
-echo '修改订单地址:'.$app->setBody((object)[])->send().PHP_EOL;
+// $app = Factory::app('update\\Address');
+// echo '修改订单地址:'.$app->send().PHP_EOL;
 // 修改订单文件
-$app = Factory::app('update\\FileInfos');
-echo '修改订单文件:'.$app->setBody((object)[])->send().PHP_EOL;
+// $app = Factory::app('update\\FileInfos');
+// echo '修改订单文件:'.$app->send().PHP_EOL;

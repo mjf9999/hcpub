@@ -21,17 +21,17 @@ class FileInfos extends Base
             [
                 "itemNo" => 1,
                 "partType" => "C",
-                "fileName" => "tangshuibook-11110-cover.pdf",
-                "fileUrl" => "https://bookssl.tangshui.net/tangshuibook-11110-cover.pdf"
+                "fileName" => "cover.pdf",
+                "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221116/5badd0fa04cca88f098aa003ad4ce177.pdf"
             ],
             [
                 "itemNo" => 1,
                 "partType" => "P",
-                "fileName" => "tangshuibook-11110-inner.pdf",
-                "fileUrl" => "https://bookssl.tangshui.net/tangshuibook-11110-inner.pdf"
+                "fileName" => "test.pdf",
+                "fileUrl" => "https://oss-fs.bbys.cn/mall/upload/20221121/e4cec8643aae08ee3b4b681d68d9d2ee.pdf"
             ]
         ],
-        "outOrderNo" => "6180aace9e3aa80028af3ae0"
+        "outOrderNo" => "12345677890"
     ];
 
     protected function validate()

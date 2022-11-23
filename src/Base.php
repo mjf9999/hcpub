@@ -37,6 +37,10 @@ class Base
         $key = substr($appSecret, 0, 8);
         $des = new DES($key, $method, DES::OUTPUT_BASE64, $key);
         $data = is_string($data) ? $data : json_encode($data, JSON_UNESCAPED_SLASHES);
+        if ('cli' == php_sapi_name()) {
+            echo 'gateway:' . $gateway . PHP_EOL;
+            echo 'request:' . $data . PHP_EOL;
+        }
         $encrypt = $des->encrypt($data);
         $body = [
             'appId' => $this->config['appId'],

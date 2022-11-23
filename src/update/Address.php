@@ -18,11 +18,11 @@ class Address extends Base
      */
     protected $body = [
         "operationType" => 1,
-        "reason" => "测试修改",
+        "reason" => "测试修改99",
         "contact" => "张三",
         "contactPhone" => "13800000000",
         "address" => "广东省东莞市虎门镇虎门印艺股份有限公司",
-        "orderNo" => "JY202106213655"
+        "orderNo" => "12345677890"
     ];
 
     protected function validate()

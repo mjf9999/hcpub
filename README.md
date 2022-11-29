@@ -1,4 +1,5 @@
 ## 对接虎彩的订单接口
+ [API文档](./docs/api.md)
 ## 安装
 ```bash
 composer require morton/hcpub
